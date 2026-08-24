@@ -1,0 +1,8 @@
+# Background
+background-opacity= 0.8
+
+# Adding window padding
+window-padding-x= 10
+
+# Adding correct theme
+theme = Catppuccin Mocha
