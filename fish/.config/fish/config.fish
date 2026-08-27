@@ -19,3 +19,6 @@ set -g __pure_prompt_symbol (set_color green)'❯ '(set_color normal)
 # end
 
 # oh-my-posh init fish --config $HOME/.config/ohmyposh/new_base.omp.toml | source
+
+# opencode
+fish_add_path /home/fredrik/.opencode/bin
