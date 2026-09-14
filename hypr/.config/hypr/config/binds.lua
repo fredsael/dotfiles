@@ -39,7 +39,7 @@ hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_up", hl.dsp.window.move({ workspa
 hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m+1" }))
 for i = 1, NUM_WPM do
 	local key = i % 10
-	hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
+	hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "r~" .. i }))
 end
 
 -- Move & Resize with mouse
@@ -116,7 +116,9 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(noctCall .. "brightness-down"),
 
 -- Screen Capture
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -n"))
-hl.bind("Print", hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
+-- Previous Noctalia region screenshot (piped to satty); uncomment to switch back
+-- hl.bind("Print", hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
+hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscreen"))
 
 -- Theming and Wallpaper
@@ -127,6 +129,9 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard")
 
 -- Notifications
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
+
+-- Handy dictation
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("pkill -USR2 -x handy"))
 
 -------------------------------
 ---- WORKSPACES & MONITORS ----
